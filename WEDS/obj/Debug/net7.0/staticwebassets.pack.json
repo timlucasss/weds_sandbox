@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\obj\\Debug\\net7.0\\compressed\\bh79xoub8a.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.WEDS.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.WEDS.props",
+      "PackagePath": "build\\WEDS.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.WEDS.props",
+      "PackagePath": "buildMultiTargeting\\WEDS.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.WEDS.props",
+      "PackagePath": "buildTransitive\\WEDS.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

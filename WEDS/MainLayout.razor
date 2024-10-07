@@ -1,0 +1,103 @@
+﻿@inherits LayoutComponentBase
+
+<header style="padding: 10px; margin: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between;">
+    <button class="button" @onclick="GoBack">
+        ← Back to Home
+    </button>
+
+    <h1 style="margin: 0; font-size: 1.5rem;">Patient Search</h1>
+
+    <button class="button" @onclick="AddNewPatient">
+        Add New Patient +
+    </button>
+</header>
+
+<div style="display: flex; height: calc(100vh - 60px);">
+    <aside style="width: 250px; padding: 20px;">
+        <div>
+            <label for="caseNo">Case No</label>
+            <input type="text" id="caseNo" @bind="caseNo" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+        </div>
+        <div>
+            <label for="nhsNumber">NHS Number</label>
+            <input type="text" id="nhsNumber" @bind="nhsNumber" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+        </div>
+        <div>
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" @bind="surname" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+        </div>
+        <div>
+            <label for="forename">Forename</label>
+            <input type="text" id="forename" @bind="forename" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+        </div>
+        <div>
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" @bind="dob" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+        </div>
+        <div>
+            <label for="sex">Sex</label>
+            <select id="sex" @bind="sex" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
+                <option value="">Select Sex</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div>
+            <label for="postcode">Postcode</label>
+            <input type="text" id="postcode" @bind="postcode" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+        </div>
+        <div>
+            <label for="letterRefNo">Letter Ref No</label>
+            <input type="text" id="letterRefNo" @bind="letterRefNo" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+        </div>
+
+        <div style="margin-top: 20px;">
+            <button class="button" style="width: 100%; margin-bottom: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; font-size: 1rem; cursor: pointer;" @onclick="Search">Search</button>
+            <button class="button" style="width: 100%; background-color: transparent; border: 2px solid #007bff; border-radius: 5px; padding: 10px; font-size: 1rem; color: #007bff; cursor: pointer;" @onclick="ClearFields">Clear</button>
+        </div>
+    </aside>
+
+    <div style="border-left: 1px solid #ccc; height: 100%;"></div>
+
+    <main style="flex-grow: 1; padding: 20px;">
+        @Body
+    </main>
+</div>
+
+@code {
+    private string caseNo;
+    private string nhsNumber;
+    private string surname;
+    private string forename;
+    private DateTime? dob;
+    private string sex;
+    private string postcode;
+    private string letterRefNo;
+
+    private void GoBack()
+    {
+
+    }
+
+    private void AddNewPatient()
+    {
+
+    }
+
+    private void Search()
+    {
+
+    }
+
+    private void ClearFields()
+    {
+        caseNo = string.Empty;
+        nhsNumber = string.Empty;
+        surname = string.Empty;
+        forename = string.Empty;
+        dob = null; 
+        sex = string.Empty;
+        postcode = string.Empty;
+        letterRefNo = string.Empty;
+    }
+}
