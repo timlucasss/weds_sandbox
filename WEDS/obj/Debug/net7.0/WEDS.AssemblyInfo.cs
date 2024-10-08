@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WEDS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15d82c686201142b8307c69c33821be6a8b3b589")]
 [assembly: System.Reflection.AssemblyProductAttribute("WEDS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WEDS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

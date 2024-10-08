@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\WEDS.csproj": {}
+    "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\WEDS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\WEDS.csproj": {
+    "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\WEDS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\WEDS.csproj",
+        "projectUniqueName": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\WEDS.csproj",
         "projectName": "WEDS",
-        "projectPath": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\WEDS.csproj",
+        "projectPath": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\WEDS.csproj",
         "packagesPath": "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\obj\\",
+        "outputPath": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Components": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[7.0.18, )"
@@ -58,6 +62,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.18, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Microsoft.NET.ILLink.Analyzers": {
               "suppressParent": "All",
@@ -76,6 +84,10 @@
               "target": "Package",
               "version": "[8.0.8, )",
               "autoReferenced": true
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [

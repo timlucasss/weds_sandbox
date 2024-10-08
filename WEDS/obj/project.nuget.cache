@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4EmWrB2UHcA=",
+  "dgSpecHash": "JA/dE058zKM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\WEDS.csproj",
+  "projectFilePath": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\WEDS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.18\\microsoft.aspnetcore.authorization.7.0.18.nupkg.sha512",
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.18\\microsoft.aspnetcore.components.7.0.18.nupkg.sha512",
@@ -22,6 +22,7 @@
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\7.0.0\\microsoft.extensions.fileproviders.physical.7.0.0.nupkg.sha512",
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\7.0.0\\microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512",
+    "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.extensions.http\\7.0.0\\microsoft.extensions.http.7.0.0.nupkg.sha512",
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
@@ -32,6 +33,7 @@
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23401.1\\microsoft.net.illink.tasks.7.0.100-1.23401.1.nupkg.sha512",
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.8\\microsoft.net.sdk.webassembly.pack.8.0.8.nupkg.sha512",
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
+    "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\system.net.http.json\\7.0.0\\system.net.http.json.7.0.0.nupkg.sha512",
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.20\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.20.nupkg.sha512"

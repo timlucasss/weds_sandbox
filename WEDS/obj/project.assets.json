@@ -316,6 +316,28 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Http/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Options": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.Logging/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -447,6 +469,25 @@
         },
         "runtime": {
           "lib/net7.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Net.Http.Json/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/System.Net.Http.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Net.Http.Json.dll": {
             "related": ".xml"
           }
         },
@@ -811,6 +852,28 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Http/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Options": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.Logging/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -942,6 +1005,25 @@
         },
         "runtime": {
           "lib/net7.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Net.Http.Json/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/System.Net.Http.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Net.Http.Json.dll": {
             "related": ".xml"
           }
         },
@@ -1517,6 +1599,33 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Http/7.0.0": {
+      "sha512": "9Pq9f/CvOSz0t9yQa6g1uWpxa2sm13daLFm8EZwy9MaQUjKXWdNUXQwIxwhmba5N83UIqURiPHSNqGK1vfWF2w==",
+      "type": "package",
+      "path": "microsoft.extensions.http/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Http.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Http.targets",
+        "lib/net462/Microsoft.Extensions.Http.dll",
+        "lib/net462/Microsoft.Extensions.Http.xml",
+        "lib/net6.0/Microsoft.Extensions.Http.dll",
+        "lib/net6.0/Microsoft.Extensions.Http.xml",
+        "lib/net7.0/Microsoft.Extensions.Http.dll",
+        "lib/net7.0/Microsoft.Extensions.Http.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
+        "microsoft.extensions.http.7.0.0.nupkg.sha512",
+        "microsoft.extensions.http.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Microsoft.Extensions.Logging/7.0.0": {
       "sha512": "Nw2muoNrOG5U5qa2ZekXwudUn2BJcD41e65zwmDHb1fQegTX66UokLWZkJRpqSSHXDOWZ5V0iqhbxOEky91atA==",
       "type": "package",
@@ -1846,6 +1955,33 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Net.Http.Json/7.0.0": {
+      "sha512": "K74te5euBJLzosprZji9juSop5mLWRzlpSNqBgZBE7/2AiPbFtM7B5eDB/tnB1jjil3bNNeJYBNfIxobs6uXhQ==",
+      "type": "package",
+      "path": "system.net.http.json/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Net.Http.Json.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Net.Http.Json.targets",
+        "lib/net462/System.Net.Http.Json.dll",
+        "lib/net462/System.Net.Http.Json.xml",
+        "lib/net6.0/System.Net.Http.Json.dll",
+        "lib/net6.0/System.Net.Http.Json.xml",
+        "lib/net7.0/System.Net.Http.Json.dll",
+        "lib/net7.0/System.Net.Http.Json.xml",
+        "lib/netstandard2.0/System.Net.Http.Json.dll",
+        "lib/netstandard2.0/System.Net.Http.Json.xml",
+        "system.net.http.json.7.0.0.nupkg.sha512",
+        "system.net.http.json.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Text.Encodings.Web/7.0.0": {
       "sha512": "OP6umVGxc0Z0MvZQBVigj4/U31Pw72ITihDWP9WiWDm+q5aoe0GaJivsfYGq53o6dxH7DcXWiCTl7+0o2CGdmg==",
       "type": "package",
@@ -1951,11 +2087,14 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Microsoft.AspNetCore.Components >= 7.0.18",
       "Microsoft.AspNetCore.Components.WebAssembly >= 7.0.18",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 7.0.18",
+      "Microsoft.Extensions.Http >= 7.0.0",
       "Microsoft.NET.ILLink.Analyzers >= 7.0.100-1.23401.1",
       "Microsoft.NET.ILLink.Tasks >= 7.0.100-1.23401.1",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.8"
+      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.8",
+      "System.Net.Http.Json >= 7.0.0"
     ]
   },
   "packageFolders": {
@@ -1965,11 +2104,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\WEDS.csproj",
+      "projectUniqueName": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\WEDS.csproj",
       "projectName": "WEDS",
-      "projectPath": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\WEDS.csproj",
+      "projectPath": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\WEDS.csproj",
       "packagesPath": "C:\\Users\\GIGDHC_Ti208756\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\WEDS\\WEDS\\obj\\",
+      "outputPath": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2008,6 +2147,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Components": {
+            "target": "Package",
+            "version": "[7.0.18, )"
+          },
           "Microsoft.AspNetCore.Components.WebAssembly": {
             "target": "Package",
             "version": "[7.0.18, )"
@@ -2016,6 +2159,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[7.0.18, )"
+          },
+          "Microsoft.Extensions.Http": {
+            "target": "Package",
+            "version": "[7.0.0, )"
           },
           "Microsoft.NET.ILLink.Analyzers": {
             "suppressParent": "All",
@@ -2034,6 +2181,10 @@
             "target": "Package",
             "version": "[8.0.8, )",
             "autoReferenced": true
+          },
+          "System.Net.Http.Json": {
+            "target": "Package",
+            "version": "[7.0.0, )"
           }
         },
         "imports": [

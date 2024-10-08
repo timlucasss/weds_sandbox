@@ -38,7 +38,7 @@ body, header {
 .button {
     background: transparent;
     border: 2px solid #007bff;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 8px 16px;
     font-size: 1rem;
     color: #007bff;

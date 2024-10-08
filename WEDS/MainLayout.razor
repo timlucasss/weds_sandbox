@@ -1,60 +1,73 @@
-﻿@inherits LayoutComponentBase
+﻿@using System.Net.Http.Headers
+@using System.Text
+@inherits LayoutComponentBase
+
+@inject HttpClient HttpClient
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Forms
+
+
 
 <header style="padding: 10px; margin: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between;">
-    <button class="button" @onclick="GoBack">
+    <button class="button">
         ← Back to Home
     </button>
 
     <h1 style="margin: 0; font-size: 1.5rem;">Patient Search</h1>
 
-    <button class="button" @onclick="AddNewPatient">
+    <button class="button">
         Add New Patient +
     </button>
 </header>
 
 <div style="display: flex; height: calc(100vh - 60px);">
-    <aside style="width: 250px; padding: 20px;">
-        <div>
-            <label for="caseNo">Case No</label>
-            <input type="text" id="caseNo" @bind="caseNo" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
-        </div>
-        <div>
-            <label for="nhsNumber">NHS Number</label>
-            <input type="text" id="nhsNumber" @bind="nhsNumber" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
-        </div>
-        <div>
-            <label for="surname">Surname</label>
-            <input type="text" id="surname" @bind="surname" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
-        </div>
-        <div>
-            <label for="forename">Forename</label>
-            <input type="text" id="forename" @bind="forename" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
-        </div>
-        <div>
-            <label for="dob">Date of Birth</label>
-            <input type="date" id="dob" @bind="dob" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
-        </div>
-        <div>
-            <label for="sex">Sex</label>
-            <select id="sex" @bind="sex" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
-                <option value="">Select Sex</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
-        </div>
-        <div>
-            <label for="postcode">Postcode</label>
-            <input type="text" id="postcode" @bind="postcode" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
-        </div>
-        <div>
-            <label for="letterRefNo">Letter Ref No</label>
-            <input type="text" id="letterRefNo" @bind="letterRefNo" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
-        </div>
+    <aside style="flex: 0 0 auto; width: 250px; padding: 20px; overflow-y: auto;">
+        <EditForm Model="this" OnValidSubmit="Search">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
 
-        <div style="margin-top: 20px;">
-            <button class="button" style="width: 100%; margin-bottom: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; font-size: 1rem; cursor: pointer;" @onclick="Search">Search</button>
-            <button class="button" style="width: 100%; background-color: transparent; border: 2px solid #007bff; border-radius: 5px; padding: 10px; font-size: 1rem; color: #007bff; cursor: pointer;" @onclick="ClearFields">Clear</button>
-        </div>
+            <div>
+                <label for="caseNo">Case No</label>
+                <InputText id="caseNo" @bind-Value="caseNo" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+            </div>
+            <div>
+                <label for="nhsNumber">NHS Number</label>
+                <InputText id="nhsNumber" @bind-Value="nhsNumber" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+            </div>
+            <div>
+                <label for="surname">Surname</label>
+                <InputText id="surname" @bind-Value="surname" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+            </div>
+            <div>
+                <label for="forename">Forename</label>
+                <InputText id="forename" @bind-Value="forename" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+            </div>
+            <div>
+                <label for="dob">Date of Birth</label>
+                <InputDate id="dob" @bind-Value="dob" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+            </div>
+            <div>
+                <label for="sex">Sex</label>
+                <select id="sex" @bind="sex" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
+                    <option value="">Select Sex</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div>
+                <label for="postcode">Postcode</label>
+                <InputText id="postcode" @bind-Value="postcode" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+            </div>
+            <div>
+                <label for="letterRefNo">Letter Ref No</label>
+                <InputText id="letterRefNo" @bind-Value="letterRefNo" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+            </div>
+
+            <div style="margin-top: 20px;">
+                <button type="submit" class="button" style="width: 100%; margin-bottom: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; font-size: 1rem; cursor: pointer;">Search</button>
+                <button type="button" class="button" style="width: 100%; background-color: transparent; border: 2px solid #007bff; border-radius: 5px; padding: 10px; font-size: 1rem; color: #007bff; cursor: pointer;" @onclick="ClearFields">Clear</button>
+            </div>
+        </EditForm>
     </aside>
 
     <div style="border-left: 1px solid #ccc; height: 100%;"></div>
@@ -62,31 +75,98 @@
     <main style="flex-grow: 1; padding: 20px;">
         @Body
     </main>
+
+    @if (!string.IsNullOrEmpty(searchResult))
+    {
+        <h4>Search Results:</h4>
+        <p>@searchResult</p>
+    }
 </div>
 
+
 @code {
-    private string caseNo;
-    private string nhsNumber;
-    private string surname;
-    private string forename;
-    private DateTime? dob;
-    private string sex;
-    private string postcode;
-    private string letterRefNo;
+    public string caseNo { get; set; } = string.Empty;
+    public string nhsNumber { get; set; } = string.Empty;
+    public string surname { get; set; } = string.Empty;
+    public string forename { get; set; } = string.Empty;
+    public DateTime? dob { get; set; } = null;
+    public string sex { get; set; } = string.Empty;
+    public string postcode { get; set; } = string.Empty;
+    public string letterRefNo { get; set; } = string.Empty;
+    public string searchResult { get; set; } = string.Empty;
 
-    private void GoBack()
+
+
+    private async Task Search()
     {
+        try
+        {
+            var requestContent = new StringContent(GenerateSoapRequest(), Encoding.UTF8, "text/xml");
+            var response = await HttpClient.PostAsync("https://sandbox.api.nhs.wales/mpi/pdq/v0/", requestContent);
 
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadAsStringAsync();
+                searchResult = ParseResponse(result);
+            }
+            else
+            {
+                searchResult = $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+            }
+        }
+        catch (HttpRequestException e)
+        {
+            searchResult = $"Request error: {e.Message}";
+        }
+        catch (Exception ex)
+        {
+            searchResult = $"An unexpected error occurred: {ex.Message}";
+        }
     }
 
-    private void AddNewPatient()
+    private string GenerateSoapRequest()
     {
-
+        return $@"<?xml version=""1.0"" encoding=""UTF-8""?>
+        <soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:mpi=""http://apps.wales.nhs.uk/mpi/"" xmlns:urn=""urn:hl7-org:v2xml"">
+          <soapenv:Header />
+          <soapenv:Body>
+            <mpi:InvokePatientDemographicsQuery>
+              <QBP_Q21 xmlns=""urn:hl7-org:v2xml"">
+                <MSH>
+                  <MSH.1>|</MSH.1>
+                  <MSH.2>^~\&amp;</MSH.2>
+                  <MSH.3><HD.1>210</HD.1></MSH.3>
+                  <MSH.4><HD.1>210</HD.1></MSH.4>
+                  <MSH.5><HD.1>100</HD.1></MSH.5>
+                  <MSH.6><HD.1>100</HD.1></MSH.6>
+                  <MSH.7><TS.1>{DateTime.UtcNow:yyyyMMddHHmmss}</TS.1></MSH.7>
+                  <MSH.9><MSG.1>QBP</MSG.1><MSG.2>Q22</MSG.2><MSG.3>QBP_Q21</MSG.3></MSH.9>
+                  <MSH.10>{Guid.NewGuid()}</MSH.10>
+                  <MSH.11><PT.1>P</PT.1></MSH.11>
+                  <MSH.12><VID.1>2.5</VID.1></MSH.12>
+                  <MSH.17>GBR</MSH.17>
+                </MSH>
+                <QPD>
+                  <QPD.1><CE.1>IHR PDQ Query</CE.1></QPD.1>
+                  <QPD.2>PatientQuery</QPD.2>
+                  <QPD.3>
+                    <QIP.1>@PID.5.1</QIP.1>
+                    <QIP.2>{surname}</QIP.2>
+                  </QPD.3>
+                  <QPD.3>
+                    <QIP.1>@PID.3.1</QIP.1>
+                    <QIP.2>{nhsNumber}</QIP.2>
+                  </QPD.3>
+                </QPD>
+              </QBP_Q21>
+            </mpi:InvokePatientDemographicsQuery>
+          </soapenv:Body>
+        </soapenv:Envelope>";
     }
 
-    private void Search()
+    private string ParseResponse(string response)
     {
-
+        return response;
     }
 
     private void ClearFields()
@@ -95,9 +175,10 @@
         nhsNumber = string.Empty;
         surname = string.Empty;
         forename = string.Empty;
-        dob = null; 
+        dob = null;
         sex = string.Empty;
         postcode = string.Empty;
         letterRefNo = string.Empty;
+        searchResult = string.Empty; // Clear the search results
     }
 }
