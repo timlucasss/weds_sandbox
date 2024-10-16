@@ -44,3 +44,15 @@ body, header {
     color: #007bff;
     cursor: pointer;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}

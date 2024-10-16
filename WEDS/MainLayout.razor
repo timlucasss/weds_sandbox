@@ -1,23 +1,19 @@
-﻿@using System.Net.Http.Headers
-@using System.Text
+﻿@using System.Text
 @inherits LayoutComponentBase
-
 @inject HttpClient HttpClient
 @using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Forms
-
-
+@using System.Threading.Tasks
+@using System.Collections.Generic
+@using System.Text.Json
+@using System.Xml.Serialization;
+@using System.IO;
+@using System.Xml;
 
 <header style="padding: 10px; margin: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between;">
-    <button class="button">
-        ← Back to Home
-    </button>
-
+    <button class="button">← Back to Home</button>
     <h1 style="margin: 0; font-size: 1.5rem;">Patient Search</h1>
-
-    <button class="button">
-        Add New Patient +
-    </button>
+    <button class="button">Add New Patient +</button>
 </header>
 
 <div style="display: flex; height: calc(100vh - 60px);">
@@ -74,99 +70,166 @@
 
     <main style="flex-grow: 1; padding: 20px;">
         @Body
-    </main>
 
-    @if (!string.IsNullOrEmpty(searchResult))
-    {
-        <h4>Search Results:</h4>
-        <p>@searchResult</p>
-    }
+        @if (searchResults.Any())
+        {
+
+            <h4>@searchResults.Count().ToString() Results Found</h4>
+            <div class="search-results">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Case No</th>
+                            <th>NHS Number</th>
+                            <th>Surname</th>
+                            <th>Forename</th>
+                            <th>Date of Birth</th>
+                            <th>Sex</th>
+                            <th>Postcode</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                        
+                        }
+                        @foreach (var patient in searchResults)
+                        {
+                         
+                            <tr>
+                                <td>@patient.CaseNo</td>
+                                <td>@patient.NhsNumber</td>
+                                <td>@patient.Surname</td>
+                                <td>@patient.Forename</td>
+                                <td>@patient.DateOfBirth?.ToString("yyyy-MM-dd")</td>
+                                <td>@patient.Sex</td>
+                                <td>@patient.Postcode</td>
+                                <td>@patient.Address</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div style="margin-top: 20px; color: red;">
+                <h4>Error:</h4>
+                <pre>@errorMessage</pre>
+            </div>
+        }
+    </main>
 </div>
 
-
 @code {
-    public string caseNo { get; set; } = string.Empty;
-    public string nhsNumber { get; set; } = string.Empty;
-    public string surname { get; set; } = string.Empty;
-    public string forename { get; set; } = string.Empty;
-    public DateTime? dob { get; set; } = null;
-    public string sex { get; set; } = string.Empty;
-    public string postcode { get; set; } = string.Empty;
-    public string letterRefNo { get; set; } = string.Empty;
-    public string searchResult { get; set; } = string.Empty;
+    public class Patient
+    {
+        public string CaseNo { get; set; }
+        public string NhsNumber { get; set; }
+        public string Surname { get; set; }
+        public string Forename { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+        public string Sex { get; set; }
+        public string Postcode { get; set; }
+        public string Address { get; set; }
+    }
 
 
+    private string caseNo;
+    private string nhsNumber;
+    private string surname;
+    private string forename;
+    private DateTime? dob;
+    private string sex;
+    private string postcode;
+    private string letterRefNo;
+    private List<Patient> searchResults = new List<Patient>();
+    private string errorMessage = string.Empty;
 
     private async Task Search()
     {
-        try
-        {
-            var requestContent = new StringContent(GenerateSoapRequest(), Encoding.UTF8, "text/xml");
-            var response = await HttpClient.PostAsync("https://sandbox.api.nhs.wales/mpi/pdq/v0/", requestContent);
+        var requestData = new { NhsNumber = nhsNumber };
+        var json = JsonSerializer.Serialize(requestData);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = await HttpClient.PostAsync("http://localhost:5175/api/patientdemographics", content);
 
-            if (response.IsSuccessStatusCode)
+        if (response.IsSuccessStatusCode)
+        {
+            var xmlResponse = await response.Content.ReadAsStringAsync();
+            xmlResponse = xmlResponse.Trim('"').Replace("\\\"", "\"");
+
+            PrintAllLongNames(xmlResponse);
+
+            try
             {
-                var result = await response.Content.ReadAsStringAsync();
-                searchResult = ParseResponse(result);
+                List<Patient> patients = ParseXmlResponse(xmlResponse);
+                searchResults = patients;
+                errorMessage = null;
             }
-            else
+            catch (Exception ex)
             {
-                searchResult = $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                errorMessage = $"Failed to parse XML response: {ex.Message}\n\nXML Response:\n{xmlResponse}";
+                searchResults.Clear();
             }
         }
-        catch (HttpRequestException e)
+        else
         {
-            searchResult = $"Request error: {e.Message}";
-        }
-        catch (Exception ex)
-        {
-            searchResult = $"An unexpected error occurred: {ex.Message}";
+            errorMessage = $"Error fetching data: {response.ReasonPhrase}";
+            searchResults.Clear();
         }
     }
 
-    private string GenerateSoapRequest()
+    private void PrintAllLongNames(string xmlResponse)
     {
-        return $@"<?xml version=""1.0"" encoding=""UTF-8""?>
-        <soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:mpi=""http://apps.wales.nhs.uk/mpi/"" xmlns:urn=""urn:hl7-org:v2xml"">
-          <soapenv:Header />
-          <soapenv:Body>
-            <mpi:InvokePatientDemographicsQuery>
-              <QBP_Q21 xmlns=""urn:hl7-org:v2xml"">
-                <MSH>
-                  <MSH.1>|</MSH.1>
-                  <MSH.2>^~\&amp;</MSH.2>
-                  <MSH.3><HD.1>210</HD.1></MSH.3>
-                  <MSH.4><HD.1>210</HD.1></MSH.4>
-                  <MSH.5><HD.1>100</HD.1></MSH.5>
-                  <MSH.6><HD.1>100</HD.1></MSH.6>
-                  <MSH.7><TS.1>{DateTime.UtcNow:yyyyMMddHHmmss}</TS.1></MSH.7>
-                  <MSH.9><MSG.1>QBP</MSG.1><MSG.2>Q22</MSG.2><MSG.3>QBP_Q21</MSG.3></MSH.9>
-                  <MSH.10>{Guid.NewGuid()}</MSH.10>
-                  <MSH.11><PT.1>P</PT.1></MSH.11>
-                  <MSH.12><VID.1>2.5</VID.1></MSH.12>
-                  <MSH.17>GBR</MSH.17>
-                </MSH>
-                <QPD>
-                  <QPD.1><CE.1>IHR PDQ Query</CE.1></QPD.1>
-                  <QPD.2>PatientQuery</QPD.2>
-                  <QPD.3>
-                    <QIP.1>@PID.5.1</QIP.1>
-                    <QIP.2>{surname}</QIP.2>
-                  </QPD.3>
-                  <QPD.3>
-                    <QIP.1>@PID.3.1</QIP.1>
-                    <QIP.2>{nhsNumber}</QIP.2>
-                  </QPD.3>
-                </QPD>
-              </QBP_Q21>
-            </mpi:InvokePatientDemographicsQuery>
-          </soapenv:Body>
-        </soapenv:Envelope>";
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.LoadXml(xmlResponse);
+
+        PrintAllNodes(xmlDoc.DocumentElement, 0);
     }
 
-    private string ParseResponse(string response)
+    private void PrintAllNodes(XmlNode node, int indentLevel)
     {
-        return response;
+        Console.WriteLine($"{new string(' ', indentLevel * 2)}<{node.Name}>: {node.InnerText}");
+
+        foreach (XmlNode childNode in node.ChildNodes)
+        {
+            PrintAllNodes(childNode, indentLevel + 1);
+        }
+    }
+
+    private List<Patient> ParseXmlResponse(string xmlResponse)
+    {
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.LoadXml(xmlResponse);
+
+        List<Patient> patients = new List<Patient>();
+        XmlNamespaceManager nsmgr = new XmlNamespaceManager(xmlDoc.NameTable);
+        nsmgr.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
+        nsmgr.AddNamespace("urn", "urn:hl7-org:v2xml");
+
+        var rspNode = xmlDoc.SelectSingleNode("//urn:RSP_K21", nsmgr);
+        if (rspNode != null)
+        {
+            XmlNodeList pidNodes = rspNode.SelectNodes(".//urn:PID", nsmgr);
+            foreach (XmlNode pidNode in pidNodes)
+            {
+                Patient patient = new Patient
+                    {
+                        CaseNo = pidNode.SelectSingleNode(".//urn:PID.1", nsmgr)?.InnerText,
+                        NhsNumber = pidNode.SelectSingleNode(".//urn:PID.3/urn:CX.1", nsmgr)?.InnerText,
+                        Surname = pidNode.SelectSingleNode(".//urn:PID.5/urn:XPN.1", nsmgr)?.InnerText,
+                        Forename = pidNode.SelectSingleNode(".//urn:PID.5/urn:XPN.2", nsmgr)?.InnerText,
+                        DateOfBirth = DateTime.TryParse(pidNode.SelectSingleNode(".//urn:PID.7/urn:TS", nsmgr)?.InnerText, out var dob) ? dob : (DateTime?)null,
+                        Sex = pidNode.SelectSingleNode(".//urn:PID.8", nsmgr)?.InnerText,
+                        Postcode = pidNode.SelectSingleNode(".//urn:PID.11/urn:XAD.5", nsmgr)?.InnerText,
+                        Address = pidNode.SelectSingleNode(".//urn:PID.11", nsmgr)?.InnerText
+                    };
+
+                patients.Add(patient);
+            }
+        }
+        return patients;
     }
 
     private void ClearFields()
@@ -179,6 +242,7 @@
         sex = string.Empty;
         postcode = string.Empty;
         letterRefNo = string.Empty;
-        searchResult = string.Empty; // Clear the search results
+        searchResults.Clear();
+        errorMessage = string.Empty;
     }
 }
