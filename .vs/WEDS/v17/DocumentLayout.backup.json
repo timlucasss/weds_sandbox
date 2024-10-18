@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|solutionrelative:weds\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|c:\\users\\gigdhc_ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\weds\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|solutionrelative:weds\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|c:\\users\\gigdhc_ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\weds\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|solutionrelative:weds\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|c:\\users\\gigdhc_ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\weds\\patientdemographicsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|solutionrelative:weds\\patientdemographicsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|c:\\users\\gigdhc_ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\weds\\models\\patientdemographicsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|solutionrelative:weds\\models\\patientdemographicsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|c:\\users\\gigdhc_ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\weds\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|solutionrelative:weds\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|c:\\users\\gigdhc_ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\weds\\weds.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|solutionrelative:weds\\weds.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|c:\\users\\gigdhc_ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\weds\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -27,12 +27,8 @@
       "RelativeMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|solutionrelative:weds\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|c:\\users\\gigdhc_ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\weds\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|solutionrelative:weds\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|c:\\users\\gigdhc_ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\weds\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|solutionrelative:weds\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|c:\\users\\gigdhc_ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\weds\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABA5540B-C2B1-4DCD-84FF-E46D6D594A61}|WEDS\\WEDS.csproj|solutionrelative:weds\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,45 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "app.css",
-              "DocumentMoniker": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\wwwroot\\css\\app.css",
-              "RelativeDocumentMoniker": "WEDS\\wwwroot\\css\\app.css",
-              "ToolTip": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\wwwroot\\css\\app.css",
-              "RelativeToolTip": "WEDS\\wwwroot\\css\\app.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-14T23:18:22.233Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.razor",
-              "DocumentMoniker": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\App.razor",
-              "RelativeDocumentMoniker": "WEDS\\App.razor",
-              "ToolTip": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\App.razor",
-              "RelativeToolTip": "WEDS\\App.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-14T23:18:10.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\_Imports.razor",
-              "RelativeDocumentMoniker": "WEDS\\_Imports.razor",
-              "ToolTip": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\_Imports.razor",
-              "RelativeToolTip": "WEDS\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-14T23:18:09.478Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 5,
@@ -89,9 +48,37 @@
               "RelativeDocumentMoniker": "WEDS\\wwwroot\\index.html",
               "ToolTip": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\wwwroot\\index.html",
               "RelativeToolTip": "WEDS\\wwwroot\\index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-10-14T23:17:40.227Z"
+              "WhenOpened": "2024-10-14T23:17:40.227Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\Models\\Patient.cs",
+              "RelativeDocumentMoniker": "WEDS\\Models\\Patient.cs",
+              "ToolTip": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\Models\\Patient.cs",
+              "RelativeToolTip": "WEDS\\Models\\Patient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T14:43:57.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WEDS",
+              "DocumentMoniker": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\WEDS.csproj",
+              "RelativeDocumentMoniker": "WEDS\\WEDS.csproj",
+              "ToolTip": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\WEDS.csproj",
+              "RelativeToolTip": "WEDS\\WEDS.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-18T14:42:13.443Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -103,23 +90,25 @@
               "RelativeToolTip": "WEDS\\Pages\\Index.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-14T23:17:33.217Z"
+              "WhenOpened": "2024-10-14T23:17:33.217Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "PatientDemographicsQuery.cs",
-              "DocumentMoniker": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\PatientDemographicsQuery.cs",
-              "RelativeDocumentMoniker": "WEDS\\PatientDemographicsQuery.cs",
-              "ToolTip": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\PatientDemographicsQuery.cs",
-              "RelativeToolTip": "WEDS\\PatientDemographicsQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\Models\\PatientDemographicsQuery.cs",
+              "RelativeDocumentMoniker": "WEDS\\Models\\PatientDemographicsQuery.cs",
+              "ToolTip": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\Models\\PatientDemographicsQuery.cs",
+              "RelativeToolTip": "WEDS\\Models\\PatientDemographicsQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T17:33:31.294Z"
+              "WhenOpened": "2024-10-10T17:33:31.294Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\Program.cs",
               "RelativeDocumentMoniker": "WEDS\\Program.cs",
@@ -127,7 +116,8 @@
               "RelativeToolTip": "WEDS\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T15:55:04.329Z"
+              "WhenOpened": "2024-10-10T15:55:04.329Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -137,7 +127,7 @@
               "RelativeDocumentMoniker": "WEDS\\MainLayout.razor",
               "ToolTip": "C:\\Users\\GIGDHC_Ti208756\\source\\repos\\weds_sandbox\\weds_sandbox\\WEDS\\MainLayout.razor",
               "RelativeToolTip": "WEDS\\MainLayout.razor",
-              "ViewState": "AgIAAFYAAAAAAAAAAAASwGoAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-08T16:26:48.119Z",
               "EditorCaption": ""

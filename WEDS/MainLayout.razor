@@ -9,6 +9,7 @@
 @using System.Xml.Serialization;
 @using System.IO;
 @using System.Xml;
+@using WEDS.Models
 
 <header style="padding: 10px; margin: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between;">
     <button class="button">← Back to Home</button>
@@ -40,8 +41,13 @@
             </div>
             <div>
                 <label for="dob">Date of Birth</label>
-                <InputDate id="dob" @bind-Value="dob" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;" />
+                <div style="display: flex; gap: 10px;">
+                    <input type="number" min="1" max="31" placeholder="Day" @bind="day" style="width: 33%; padding: 10px;" />
+                    <input type="number" min="1" max="12" placeholder="Month" @bind="month" style="width: 33%; padding: 10px;" />
+                    <input type="number" min="1900" placeholder="Year" @bind="year" style="width: 33%; padding: 10px;" />
+                </div>
             </div>
+
             <div>
                 <label for="sex">Sex</label>
                 <select id="sex" @bind="sex" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
@@ -123,24 +129,14 @@
 </div>
 
 @code {
-    public class Patient
-    {
-        public string CaseNo { get; set; }
-        public string NhsNumber { get; set; }
-        public string Surname { get; set; }
-        public string Forename { get; set; }
-        public DateTime? DateOfBirth { get; set; }
-        public string Sex { get; set; }
-        public string Postcode { get; set; }
-        public string Address { get; set; }
-    }
-
-
     private string caseNo;
     private string nhsNumber;
     private string surname;
     private string forename;
-    private DateTime? dob;
+    private int? day; 
+    private int? month; 
+    private int? year; 
+    private string dobString;
     private string sex;
     private string postcode;
     private string letterRefNo;
@@ -149,7 +145,34 @@
 
     private async Task Search()
     {
-        var requestData = new { NhsNumber = nhsNumber };
+        if (day.HasValue && month.HasValue && year.HasValue)
+        {
+            try
+            {
+                DateTime dob = new DateTime(year.Value, month.Value, day.Value);
+
+                dobString = dob.ToString("yyyyMMddHHmmss");
+            }
+            catch (Exception ex)
+            {
+                errorMessage = "Invalid date.";
+                return;
+            }
+        }
+        else
+        {
+            dobString = null;
+        }
+
+        var requestData = new
+        {
+            NhsNumber = nhsNumber,
+            Surname = surname,
+            Forename = forename,
+            Sex = sex,
+            DateOfBirth = dobString,
+        };
+
         var json = JsonSerializer.Serialize(requestData);
         var content = new StringContent(json, Encoding.UTF8, "application/json");
         var response = await HttpClient.PostAsync("http://localhost:5175/api/patientdemographics", content);
@@ -159,8 +182,6 @@
             var xmlResponse = await response.Content.ReadAsStringAsync();
             xmlResponse = xmlResponse.Trim('"').Replace("\\\"", "\"");
 
-            PrintAllLongNames(xmlResponse);
-
             try
             {
                 List<Patient> patients = ParseXmlResponse(xmlResponse);
@@ -169,7 +190,7 @@
             }
             catch (Exception ex)
             {
-                errorMessage = $"Failed to parse XML response: {ex.Message}\n\nXML Response:\n{xmlResponse}";
+                errorMessage = ex.ToString();
                 searchResults.Clear();
             }
         }
@@ -177,24 +198,6 @@
         {
             errorMessage = $"Error fetching data: {response.ReasonPhrase}";
             searchResults.Clear();
-        }
-    }
-
-    private void PrintAllLongNames(string xmlResponse)
-    {
-        XmlDocument xmlDoc = new XmlDocument();
-        xmlDoc.LoadXml(xmlResponse);
-
-        PrintAllNodes(xmlDoc.DocumentElement, 0);
-    }
-
-    private void PrintAllNodes(XmlNode node, int indentLevel)
-    {
-        Console.WriteLine($"{new string(' ', indentLevel * 2)}<{node.Name}>: {node.InnerText}");
-
-        foreach (XmlNode childNode in node.ChildNodes)
-        {
-            PrintAllNodes(childNode, indentLevel + 1);
         }
     }
 
@@ -220,7 +223,12 @@
                         NhsNumber = pidNode.SelectSingleNode(".//urn:PID.3/urn:CX.1", nsmgr)?.InnerText,
                         Surname = pidNode.SelectSingleNode(".//urn:PID.5/urn:XPN.1", nsmgr)?.InnerText,
                         Forename = pidNode.SelectSingleNode(".//urn:PID.5/urn:XPN.2", nsmgr)?.InnerText,
-                        DateOfBirth = DateTime.TryParse(pidNode.SelectSingleNode(".//urn:PID.7/urn:TS", nsmgr)?.InnerText, out var dob) ? dob : (DateTime?)null,
+                        DateOfBirth = DateTime.TryParseExact(
+                            pidNode.SelectSingleNode(".//urn:PID.7", nsmgr)?.InnerText,
+                            "yyyyMMddHHmmss",
+                            System.Globalization.CultureInfo.InvariantCulture,
+                            System.Globalization.DateTimeStyles.None,
+                            out DateTime dobResult) ? dobResult : (DateTime?)null,
                         Sex = pidNode.SelectSingleNode(".//urn:PID.8", nsmgr)?.InnerText,
                         Postcode = pidNode.SelectSingleNode(".//urn:PID.11/urn:XAD.5", nsmgr)?.InnerText,
                         Address = pidNode.SelectSingleNode(".//urn:PID.11", nsmgr)?.InnerText
@@ -238,7 +246,10 @@
         nhsNumber = string.Empty;
         surname = string.Empty;
         forename = string.Empty;
-        dob = null;
+        day = null;
+        month = null;
+        year = null;
+        dobString = string.Empty;
         sex = string.Empty;
         postcode = string.Empty;
         letterRefNo = string.Empty;
@@ -246,3 +257,4 @@
         errorMessage = string.Empty;
     }
 }
+
